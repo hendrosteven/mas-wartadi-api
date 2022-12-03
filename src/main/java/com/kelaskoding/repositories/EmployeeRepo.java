@@ -6,4 +6,6 @@ import com.kelaskoding.models.Employee;
 
 public interface EmployeeRepo extends CrudRepository<Employee, Long>{
     
+    
+
 }
