@@ -29,6 +29,11 @@ public class EmployeeController {
         return employeeService.findById(id);
     }
 
+    @GetMapping("/name/{name}")
+    public Employee findOneByName(@PathVariable("name") String name){
+        return employeeService.findByName(name);
+    }
+
     @PostMapping
     public Employee createOne(@RequestBody Employee employee){
         return employeeService.save(employee);

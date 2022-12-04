@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,14 +21,13 @@ public class Employee {
     @Column(length = 150)
     private String nama;
     
-    @Column(unique = true, length = 200)
-    private String email;
-    
     @Column(unique = true, length = 50)
     private String phone;
     
-    private String departement;
+    @ManyToOne
+    private Department departement;
 
+    
     public Employee() {
     }
 
@@ -48,14 +48,6 @@ public class Employee {
         this.nama = nama;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getPhone() {
         return phone;
     }
@@ -64,14 +56,13 @@ public class Employee {
         this.phone = phone;
     }
 
-    public String getDepartement() {
+    public Department getDepartement() {
         return departement;
     }
 
-    public void setDepartement(String departement) {
+    public void setDepartement(Department departement) {
         this.departement = departement;
     }
-
 
     public Long getId() {
         return id;

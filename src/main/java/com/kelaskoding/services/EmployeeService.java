@@ -23,8 +23,12 @@ public class EmployeeService {
         return repo.findById(id).orElse(null);
     }
 
+    public Employee findByName(String name){
+        return repo.findEmployeeByName(name);
+    }
+
     public Employee save(Employee employee){
-        return repo.save(employee);
+        return repo.save(employee);       
     }
 
     public boolean deleteById(Long id){
